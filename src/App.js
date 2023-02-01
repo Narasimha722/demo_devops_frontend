@@ -7,13 +7,13 @@ function App() {
   const [email_,setEmail]=useState('');
   const [emails,setEmails]=useState([]);
   function data_submit(){
-    axios.post('http://localhost:8000/post_contact',{"contact":email_})
+    axios.post('http://10.0.2.173:8000/post_contact',{"contact":email_})
      .then((r)=>alert('data saved ..'))
      .catch((e)=>console.log(e))
   }
   // const a=['a','b','c','d','e','f','g','h','i'];
   useEffect(()=>{
-    axios.get('http://localhost:8000/get_contact')
+    axios.get('http://10.0.2.173:8000/get_contact')
      .then((r)=>setEmails(r.data))
      .catch((e)=>console.log(e))
   },[])
