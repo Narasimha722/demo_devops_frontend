@@ -12,11 +12,12 @@ function App() {
      .catch((e)=>console.log(e))
   }
   // const a=['a','b','c','d','e','f','g','h','i'];
-  useEffect(async ()=>{
+  useEffect(()=>{
     axios.get('http://10.0.2.173:8000/get_contact')
      .then((r)=>setEmails(r.data))
      .catch((e)=>console.log(e))
-    await axios.get('http://10.0.2.173:8000')
+    axios.get('http://10.0.2.173:8000')
+     .then(()=>console.log('Connect'))
   },[])
   return (
     <div className="App">
