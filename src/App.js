@@ -22,16 +22,16 @@ function App() {
   return (
     <div className="App">
       <div className='div_'>
-        <input placeholder='enter Email ID' required onChange={(e)=>setEmail(e.target.value)} />
-        <button type='submit' onClick={()=>data_submit()}>Add contact</button>
+        <input placeholder='enter Email ID' type="email" required onChange={(e)=>setEmail(e.target.value)} />
+        <button type='submit' onClick={()=>data_submit()}>Add Email</button>
       </div>
-      <div className='data_field'>
+      <ul className='data_field'>
         {emails.map((i)=>{
           return(
-            <h1 key={i}>{i.contact}</h1>
+            <li key={i}>{i.contact}</li>
           )
         })}
-      </div>
+      </ul>
     </div>
   );
 }
